@@ -29,6 +29,9 @@
             this.body.vel.x = 0; 
         }
         
+        this.body.update(delta);
+        me.collision.check(this, true, this.collideHandler.bind(this), true);
+        
         if (this.body.vel.x !== 0) {
             if (!this.renderable.isCurrentAnimation("smallWalk")) {
                  this.renderable.setCurrentAnimation("smallWalk");
@@ -43,4 +46,21 @@
         return true;
     }
     
+   // collideHandler: function(responce){
+        
+   // }
+    
+ });
+ 
+ game.LevelTrigger =  me.Entity.extend({
+     init: function (x, y,  settings) {
+         this._super(me,Entity, 'init', [x, y, setting]);
+         this.body.onCollision = this.onCollision.bind(this);
+     },
+     
+     onCollision: function(){
+         this.body.setCollisionMask(me.collision.types.NO_OBJECT);
+         me.levelDirector.loadLevel(this.level);
+     }
+     
  });
