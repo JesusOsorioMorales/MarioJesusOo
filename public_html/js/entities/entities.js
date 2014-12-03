@@ -53,7 +53,7 @@ game.PlayerEntity = me.Entity.extend({
     
     collideHandler: function(responce) {
         
-    },
+    }
     
      
 });
@@ -73,4 +73,24 @@ game.LevelTrigger = me.Entity.extend({
         
     }
 
+});
+
+game.badguy = me.Entity.extend({
+   init: function(x, y, settings) {
+       this._super(me.Entity, 'init', [x, y, {
+                image: "slime",
+                spritewidth: "60",
+                spriteheight: "28",
+                width: 60,
+                height: 28,
+                getShape: function() {
+                    return  (new me.Rect(0, 0, 60, 28)).toPolygon();
+                }
+            }]);
+       
+   },
+   update:  function(delta) {
+       
+   }
+    
 });
