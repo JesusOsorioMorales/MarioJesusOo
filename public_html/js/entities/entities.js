@@ -51,8 +51,10 @@ game.PlayerEntity = me.Entity.extend({
         return true;
     },
     
-    collideHandler: function(responce) {
-        
+    collideHandler: function(response) {
+        if(response.b.type === 'badguy') {
+            me.state.change(me.state.MENU);
+     }
     }
     
      
@@ -90,7 +92,7 @@ game.badguy = me.Entity.extend({
         this.spritewidth = 60;
         var width = settings.width;      
         x = this.pos.x;
-        this.stratX = x;
+        this.startX = x;
         this.endX = x + width - this.spritewidth;
         this.pos.x = x + width - this.spritewidth;
         this.updateBounds();
@@ -104,7 +106,7 @@ game.badguy = me.Entity.extend({
         //this.renderable.addAnimation("run",[0, 1, 2], 80);
         //this.renderable.setCurrentAnimation("run");
         
-        this.body.Velocity(4, 6);
+        this.body.setVelocity(4, 6);
         
    },
    update:  function(delta) {
@@ -129,8 +131,12 @@ game.badguy = me.Entity.extend({
        return true;
    },
    
-   collideHandler: function() {
+   collideHandler: function(response) {
+       //var ydif = .pos. - responce
        
+       if(response.b.type === 'badguy') {
+           me.state.change(me.state.MENU);
+       }
    }
     
 });

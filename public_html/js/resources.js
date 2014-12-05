@@ -7,8 +7,10 @@ game.resources = [
         {name: "background-tiles", type:"image", src: "data/img/background-tiles.png"},
         {name: "meta-tiles", type:"image", src: "data/img/meta-tiles.png"},
         {name: "mario", type:"image", src: "data/img/player1.png"},
-        {name: "title-screen", type:"image", src: "data/img/title-screen.png"},
+        {name: "title-screen", type:"image", src: "data/img/mario background.png"},
         {name: "slime", type:"image", src: "data/img/slime-spritesheet.png"},
+       // {name: "background-tiles", type:"image", src: "data/img/lol.png"},
+        //{name: "jesusLevel01.tmg", type:"image", src: "data/img/images4SXHHWRZ.png"},
                 
 	/* Atlases 
 	 * @example
@@ -22,7 +24,7 @@ game.resources = [
  	 */
         {name: "JesusLevel01", type: "tmx", src: "data/map/JesusLevel01.tmx"},
         {name: "JesusLevel02", type: "tmx", src: "data/map/JesusLevel02.tmx"},
-
+        {name: "JesusLevel03", type: "tmx", src: "data/map/JesusLevel03.tmx"},
 	/* Background music. 
 	 * @example
 	 * {name: "example_bgm", type: "audio", src: "data/bgm/"},
